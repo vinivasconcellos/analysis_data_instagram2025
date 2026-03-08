@@ -22,3 +22,28 @@ def formatar_mes(df_postagens2025):
     df_postagens2025["Título / Tema do Post"] = df_postagens2025["Título / Tema do Post"].str.lower()
     df_postagens2025["Formato"] = df_postagens2025["Formato"].str.capitalize()
     return df_postagens2025
+
+def extrair_ano_mes(referencia):
+    """
+    Converte 'Jan' → '01'
+    """
+
+    mapa_meses = {
+        "Jan": "01",
+        "Fev": "02",
+        "Mar": "03",
+        "Abr": "04",
+        "Mai": "05",
+        "Jun": "06",
+        "Jul": "07",
+        "Ago": "08",
+        "Set": "09",
+        "Out": "10",
+        "Nov": "11",
+        "Dez": "12"
+    }
+
+    nome_mes = referencia
+    mes = mapa_meses[nome_mes]
+
+    return mes
